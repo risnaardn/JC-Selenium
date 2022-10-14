@@ -13,10 +13,9 @@ public class PostTestRisna {
     public static void main(String[] args) throws InterruptedException {
 
         // System Property for Chrome Driver
-
         System.setProperty("webdriver.chrome.driver", "D:\\ChromeDriver\\chromedriver.exe");
-        // Instantiate a ChromeDriver class.
 
+        // Instantiate a ChromeDriver class.
         WebDriver driver=new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -53,13 +52,14 @@ public class PostTestRisna {
         WebElement elementSelect = driver.findElement(By.id("select-menu"));
         Select select = new Select(elementSelect);
         select.selectByIndex(2);
+        System.out.println("Select Year Experience");
 
         driver.findElement(By.xpath("//*[@id=\"datepicker\"]")).sendKeys("01/08/2023");
-        System.out.println("date");
+        System.out.println("Date Picker");
         delay(detik);
 
         driver.findElement(By.xpath("/html/body/div/form/div/div[8]/a")).click();
-        System.out.println("submit");
+        System.out.println("Submit button");
         delay(detik);
 
 
