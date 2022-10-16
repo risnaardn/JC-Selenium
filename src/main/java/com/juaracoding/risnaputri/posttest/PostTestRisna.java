@@ -1,4 +1,4 @@
-package com.juaracoding.risnaputri;
+package com.juaracoding.risnaputri.posttest;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
