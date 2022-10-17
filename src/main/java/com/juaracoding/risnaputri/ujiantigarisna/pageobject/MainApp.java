@@ -2,6 +2,8 @@ package com.juaracoding.risnaputri.ujiantigarisna.pageobject;
 
 import com.juaracoding.risnaputri.ujiantigarisna.pageobject.drivers.DriverSingleton;
 import com.juaracoding.risnaputri.ujiantigarisna.pageobject.pages.AddProduct;
+import com.juaracoding.risnaputri.ujiantigarisna.pageobject.pages.MenuLogin;
+import com.juaracoding.risnaputri.ujiantigarisna.pageobject.pages.MenuRegister;
 import com.juaracoding.risnaputri.ujiantigarisna.pageobject.utils.Constants;
 import org.openqa.selenium.WebDriver;
 
@@ -12,7 +14,11 @@ public class MainApp {
         WebDriver driver = DriverSingleton.getDriver();
         driver.get(Constants.URL);
 
+        MenuRegister menuRegister = new MenuRegister();
+        menuRegister.Regristrasi();
 
+        MenuLogin menuLogin = new MenuLogin();
+        menuLogin.Login();
 
         AddProduct addProduct = new AddProduct();
         addProduct.addTheProduct();
