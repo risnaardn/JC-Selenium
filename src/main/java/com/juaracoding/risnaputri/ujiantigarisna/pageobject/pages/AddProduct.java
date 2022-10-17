@@ -40,14 +40,19 @@ public class AddProduct {
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         beranda.click();
+        System.out.println("klik halaman beranda");
         js.executeScript("window.scrollBy(0, 1000)");
         clickItem.click();
+        System.out.println("klik item");
         js.executeScript("window.scrollBy(0, 1000)");
         Select color = new Select(driver.findElement(By.id("color")));
         color.selectByVisibleText("White");
+        System.out.println("select color");
         Select size = new Select(driver.findElement(By.id("size")));
         size.selectByVisibleText("L");
+        System.out.println("select size");
         js.executeScript("arguments[0].click();", addToCart);
+        System.out.println("klik button add to cart");
 
 
 

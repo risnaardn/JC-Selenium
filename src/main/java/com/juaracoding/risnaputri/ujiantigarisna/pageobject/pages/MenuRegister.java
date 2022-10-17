@@ -46,12 +46,23 @@ public class MenuRegister {
 
         js.executeScript("window.scrollBy(0, 250)");
         myAccount.click();
+        System.out.println("klik menu myAccount");
+
         js.executeScript("window.scrollBy(0,550)");
+
         this.reg_username.sendKeys("nana");
+        System.out.println("input register username");
+
         this.reg_email.sendKeys("nana@gmail.com");
+        System.out.println("input register email");
+
         this.reg_passsword.sendKeys("kucing123");
+        System.out.println("input register passowrd");
+
         js.executeScript("window.scrollBy(0, 100)");
         js.executeScript("arguments[0].click();", btnRegister);
+
+        System.out.println("klik button register");
 
 
 

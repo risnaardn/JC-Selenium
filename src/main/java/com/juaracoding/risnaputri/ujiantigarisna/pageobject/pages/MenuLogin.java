@@ -34,8 +34,11 @@ public class MenuLogin {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,550)");
         this.username.sendKeys("nana");
+        System.out.println("input login username");
         this.password.sendKeys("kucing123");
+        System.out.println("input login passowrd");
         js.executeScript("arguments[0].click();", login);
+        System.out.println("klik button login");
 
     }
 
