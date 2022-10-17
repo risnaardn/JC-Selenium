@@ -1,11 +1,13 @@
 package com.juaracoding.risnaputri.ujiantigarisna.pageobject.pages;
 
 import com.juaracoding.risnaputri.ujiantigarisna.pageobject.drivers.DriverSingleton;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class AddProduct {
 
@@ -22,14 +24,14 @@ public class AddProduct {
     @FindBy(xpath = "//*[@id=\"noo-site\"]/div[2]/div[4]/div/div[1]/div/div/div/div[2]/div[2]/div[1]")
     WebElement clickItem;
 
-     @FindBy(xpath = "color-White")
+     @FindBy(id = "color")
     WebElement color;
 
 
     @FindBy(id = "size")
     WebElement size;
 
-    @FindBy(name = "submit")
+    @FindBy(xpath = "//*[@id=\"product-704\"]/div[1]/div[2]/form/div/div[2]/button")
     WebElement addToCart;
 
    //Page Object
@@ -41,8 +43,10 @@ public class AddProduct {
         js.executeScript("window.scrollBy(0, 1000)");
         clickItem.click();
         js.executeScript("window.scrollBy(0, 1000)");
-        color.isSelected();
-        size.isSelected();
+        Select color = new Select(driver.findElement(By.id("color")));
+        color.selectByVisibleText("White");
+        Select size = new Select(driver.findElement(By.id("size")));
+        size.selectByVisibleText("L");
         js.executeScript("arguments[0].click();", addToCart);
 
 
